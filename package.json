@@ -13,14 +13,18 @@
     "predev": "npm run build:icons --silent",
     "prebuild": "npm run build:icons --silent",
     "build:icons": "tsx ./utils/build-icons.mts",
+    "setup": "npm run build && prisma migrate dev --name init",
     "format:write": "prettier --write \"{app,components}/**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"{app,components}**/*.{ts,tsx,mdx}\" --cache",
     "test": "vitest"
   },
   "dependencies": {
+    "@prisma/client": "^5.8.1",
     "@radix-ui/react-slot": "^1.0.2",
+    "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^10.18.0",
     "next": "14.1.0",
     "node-html-parser": "^6.1.12",
     "react": "^18",
@@ -30,11 +34,13 @@
     "tailwindcss-radix": "^2.8.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@testing-library/cypress": "^10.0.1",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/eslint": "^8.56.2",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.11.5",
@@ -55,9 +61,16 @@
     "postcss": "^8",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "prisma": "^5.8.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.2.1"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }

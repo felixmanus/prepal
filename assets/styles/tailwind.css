@@ -66,3 +66,9 @@
 		@apply bg-gradient-to-r from-gray-25  via-slate-100 to-white;
 	}
 }
+
+@layer components {
+	.input-field {
+		@apply h-[42px] max-h-[42px] rounded-sm border border-gray-100 px-md py-xs text-body-sm text-gray-400 focus:border-transparent focus:outline-0 focus:ring-2 focus:ring-purple-primary focus-visible:outline-0 disabled:cursor-not-allowed disabled:text-gray-300 disabled:opacity-50 aria-[invalid]:border-error aria-[invalid]:ring-error aria-[invalid]:focus:border-transparent;
+	}
+}

@@ -25,6 +25,7 @@ const confg = {
 		'<THIRD_PARTY_MODULES>',
 		'^@/components/(.*)$',
 		'^@/utils/(.*)$',
+		'^@/lib/(.*)$',
 		'^@/app/(.*)$',
 		'^[./]',
 	],

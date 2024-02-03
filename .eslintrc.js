@@ -10,8 +10,9 @@ module.exports = {
 	extends: ['next', 'react-app', 'react-app/jest', 'prettier'],
 	rules: {
 		'react-hooks/exhaustive-deps': 'off',
+		'react/no-unescaped-entities': 'off',
 		'@typescript-eslint/no-unused-vars': [
-			'error',
+			'warn',
 			{
 				vars: 'all',
 				args: 'none',
@@ -19,7 +20,6 @@ module.exports = {
 		],
 		'@typescript-eslint/explicit-function-return-type': 'off',
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
-		'@typescript-eslint/no-explicit-any': 'warn',
 		'@typescript-eslint/no-use-before-define': ['error'],
 		'@typescript-eslint/no-var-requires': 'off',
 		'@typescript-eslint/consistent-type-imports': [

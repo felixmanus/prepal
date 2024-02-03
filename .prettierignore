@@ -1,0 +1,12 @@
+node_modules
+
+.next/
+_next/
+node_modules/
+
+/coverage
+
+package-lock.json
+
+/cypress/screenshots
+/cypress/videos

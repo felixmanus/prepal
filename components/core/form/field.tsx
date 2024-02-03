@@ -69,8 +69,8 @@ export function Field({
 			</div>
 
 			{(errorId || hint) && (
-				<div role="alert" className="flex min-h-[1.5rem] flex-col items-start justify-start pl-md">
-					{errorId ? <ErrorList id={errorId} errors={errors} /> : null}
+				<div role="alert" className="flex min-h-[1rem] flex-col items-start justify-start pl-md">
+					{errorId ? <ErrorList id={errorId} error={errors} /> : null}
 					{hint ? (
 						<div className="flex flex-row items-center justify-between py-1">
 							{hint.showIcon && <Icon name="info" className="mr-xs text-gray-400" />}

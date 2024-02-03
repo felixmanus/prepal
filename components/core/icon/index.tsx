@@ -46,7 +46,7 @@ export const Icon = React.forwardRef<
 			className={cn(sizeClassName[size], 'inline shrink-0 self-center', className, iconClassNames)}
 			ref={ref}
 		>
-			<use href={`./icons/sprite.svg#${name}`} />
+			<use href={`/icons/sprite.svg#${name}`} />
 		</svg>
 	);
 });

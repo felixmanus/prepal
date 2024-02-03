@@ -2,5 +2,21 @@
  
 	type IconName =
 	| "arrow-down"
+	| "arrow-right"
+	| "avatar"
+	| "chevron-down"
+	| "close"
+	| "cross"
+	| "dash"
+	| "dots-h"
+	| "dots-v"
+	| "exit"
+	| "folder"
 	| "info"
+	| "pencil"
+	| "plus-circled"
+	| "reader"
+	| "search"
+	| "transform"
+	| "trash"
 	| "update";

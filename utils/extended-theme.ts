@@ -2,37 +2,37 @@ import { type Config } from 'tailwindcss';
 
 export const extendedTheme = {
 	colors: {
-		white: 'rgb(var(--white))',
+		// white: 'rgb(var(--white))',
 		border: {
 			DEFAULT: 'rgb(var(--gray-100))',
 			light: 'rgb(var(--gray-50))',
 		},
 
-		error: 'rgb(var(--error))',
-		warning: 'rgb(var(--warning))',
-		success: 'rgb(var(--success))',
+		// error: 'rgb(var(--error))',
+		// warning: 'rgb(var(--warning))',
+		// success: 'rgb(var(--success))',
 
-		gray: {
-			25: 'rgb(var(--gray-25))',
-			50: 'rgb(var(--gray-50))',
-			100: 'rgb(var(--gray-100))',
-			200: 'rgb(var(--gray-200))',
-			300: 'rgb(var(--gray-300))',
-			400: 'rgb(var(--gray-400))',
-			500: 'rgb(var(--gray-500))',
-			primary: 'rgb(var(--gray-primary))',
-		},
+		// gray: {
+		// 	25: 'rgb(var(--gray-25))',
+		// 	50: 'rgb(var(--gray-50))',
+		// 	100: 'rgb(var(--gray-100))',
+		// 	200: 'rgb(var(--gray-200))',
+		// 	300: 'rgb(var(--gray-300))',
+		// 	400: 'rgb(var(--gray-400))',
+		// 	500: 'rgb(var(--gray-500))',
+		// 	primary: 'rgb(var(--gray-primary))',
+		// },
 
-		purple: {
-			25: 'rgb(var(--purple-25))',
-			50: 'rgb(var(--purple-50))',
-			100: 'rgb(var(--purple-100))',
-			200: 'rgb(var(--purple-200))',
-			300: 'rgb(var(--purple-300))',
-			400: 'rgb(var(--purple-400))',
-			500: 'rgb(var(--purple-500))',
-			primary: 'rgb(var(--purple-primary))',
-		},
+		// purple: {
+		// 	25: 'rgb(var(--purple-25))',
+		// 	50: 'rgb(var(--purple-50))',
+		// 	100: 'rgb(var(--purple-100))',
+		// 	200: 'rgb(var(--purple-200))',
+		// 	300: 'rgb(var(--purple-300))',
+		// 	400: 'rgb(var(--purple-400))',
+		// 	500: 'rgb(var(--purple-500))',
+		// 	primary: 'rgb(var(--purple-primary))',
+		// },
 	},
 	borderRadius: {
 		none: '0',
@@ -106,5 +106,19 @@ export const extendedTheme = {
 		'button-md': ['1rem', { lineHeight: '1.1rem', fontWeight: '700' }],
 		/** 20px size / 22px high / bold */
 		'button-lg': ['1.25rem', { lineHeight: '1.375rem', fontWeight: '700' }],
+	},
+	keyframes: {
+		'accordion-down': {
+			from: { height: '0' },
+			to: { height: 'var(--radix-accordion-content-height)' },
+		},
+		'accordion-up': {
+			from: { height: 'var(--radix-accordion-content-height)' },
+			to: { height: '0' },
+		},
+	},
+	animation: {
+		'accordion-down': 'accordion-down 0.2s ease-out',
+		'accordion-up': 'accordion-up 0.2s ease-out',
 	},
 } satisfies Config['theme'];

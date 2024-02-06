@@ -42,7 +42,7 @@ export function Field({
 				<Label
 					htmlFor={id}
 					{...labelProps}
-					className={`${labelProps.className} flex min-h-[2rem] items-center self-start text-gray-500`}
+					className={`${labelProps.className} flex min-h-[2rem] items-center self-start text-gray-600`}
 				/>
 			)}
 

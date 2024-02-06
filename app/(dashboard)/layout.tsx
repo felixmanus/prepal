@@ -1,11 +1,6 @@
 import '@/assets/styles/tailwind.css';
 
 import { type Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-import { PreloadResources } from '../preload-resources';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Prepal - Dashboard',
@@ -17,10 +12,5 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<PreloadResources />
-			<body className={`${inter.className} scroll-smooth antialiased`}>{children}</body>
-		</html>
-	);
+	return <div>{children}</div>;
 }

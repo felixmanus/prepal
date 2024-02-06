@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<div>
+		<div className="grd-lighter">
 			<PublicHeader />
 			<main className="h-[calc(100vh-74px)]">{children}</main>
 		</div>

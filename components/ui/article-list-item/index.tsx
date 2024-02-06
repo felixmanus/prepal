@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import moment from 'moment';
+
 import { Icon } from '@/components/core/icon';
 import { useToast } from '@/components/core/toast/use-toast';
 
@@ -18,7 +20,15 @@ interface ArticleListItemProps {
 	className?: string;
 }
 
-export const ArticleListItem = ({ title, content, className, createdAt, id, topicId }: ArticleListItemProps) => {
+export const ArticleListItem = ({
+	title,
+	content,
+	className,
+	createdAt,
+	updatedAt,
+	id,
+	topicId,
+}: ArticleListItemProps) => {
 	const router = useRouter();
 	const { toast } = useToast();
 
@@ -52,7 +62,7 @@ export const ArticleListItem = ({ title, content, className, createdAt, id, topi
 				<span title={title} className="text-body-md font-bold text-nowrap text-ellipsis overflow-hidden w-full">
 					{title}
 				</span>
-				<div className="flex items-center justify-between shrink-0 border-l border-gray-300 px-xs basis-[5rem]">
+				<div className="flex items-center justify-between shrink-0 border-l border-gray-300 px-xs basis-[6rem]">
 					<p className="flex p-xxs items-center hover:bg-gray-200 hover:rounded-full" onClick={deleteArticle}>
 						<Icon name="trash" />
 					</p>
@@ -62,21 +72,21 @@ export const ArticleListItem = ({ title, content, className, createdAt, id, topi
 				</div>
 			</header>
 			<div className="overflow-hidden py-sm flex flex-col">
-				<p className="text-body-sm overflow-hidden text-ellipsis text-nowrap">{content}</p>
+				<p className="text-body-sm truncate">{content}</p>
 			</div>
-			<footer className="border-t pt-sm border-gray-300">
-				<strong className="text-body-sm">Published - </strong>
-				<span className="text-body-sm">
-					{createdAt.toLocaleDateString('en-us', {
-						year: 'numeric',
-						month: 'short',
-						day: '2-digit',
-						hour: '2-digit',
-						minute: '2-digit',
-						timeZone: 'UTC',
-						timeZoneName: 'short',
-					})}
-				</span>
+			<footer className="flex flex-col border-t pt-sm border-gray-300 overflow-hidden">
+				<p className="mb-xs flex items-center justify-between">
+					<strong className="text-body-sm shrink-0 mr-xs">Published</strong>
+					<span title={moment(createdAt).format('LLL')} className="text-body-sm truncate">
+						{moment(createdAt).format('LLL')}
+					</span>
+				</p>
+				<p className="flex items-center justify-between">
+					<strong className="text-body-sm shrink-0 mr-xs">Last updated</strong>
+					<span title={moment(updatedAt).format('LLL')} className="text-body-sm truncate">
+						{moment(updatedAt).format('LLL')}
+					</span>
+				</p>
 			</footer>
 		</div>
 	);

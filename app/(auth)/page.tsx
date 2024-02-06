@@ -4,7 +4,7 @@ import { Button } from '@/components/core/button';
 
 export default function AuthHome() {
 	return (
-		<section className="relative h-full grd-lighter flex justify-between items-center">
+		<section className="relative h-full flex justify-between items-center">
 			<div className="w-[50rem] ml-xxl">
 				<h2 className="text-h2 mb-xxs">Prepare yourself for everything seamlessly in one place</h2>
 				<p>

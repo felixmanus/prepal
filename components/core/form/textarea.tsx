@@ -8,7 +8,7 @@ import { Label } from './label';
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({ className, ...props }, ref) => {
-	return <textarea className={cn('textarea-field', className)} ref={ref} {...props} />;
+	return <textarea rows={50} className={cn('textarea-field', className)} ref={ref} {...props} />;
 });
 Textarea.displayName = 'Textarea';
 

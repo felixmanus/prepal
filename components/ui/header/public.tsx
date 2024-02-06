@@ -1,21 +1,19 @@
 import Link from 'next/link';
 
-import { buttonVariants } from '@/components/core/button';
-import { Icon } from '@/components/core/icon';
+import { buttonVariants } from '@/components/core/button/variants';
 
 import { cn } from '@/utils/misc';
 
 export const PublicHeader = () => {
 	return (
-		<header className="flex items-center justify-between px-lg py-md bg-white sticky top-0 z-10 grd-header shadow-sm">
-			<h6 className="text-h6">
+		<header className="flex items-center justify-between px-xxl py-md bg-transparent">
+			<h6 className="text-h6 mr-xxl">
 				<Link href="/">Prepal</Link>
 			</h6>
-			<ul className="ml-auto flex items-center">
+			<ul className="mr-auto flex items-center">
 				<li>
 					<Link href="/missions" className={cn(buttonVariants({ variant: 'link' }))}>
 						Our mission
-						<Icon name="arrow-down" />
 					</Link>
 				</li>
 				<li>
@@ -28,7 +26,9 @@ export const PublicHeader = () => {
 						Contact
 					</Link>
 				</li>
-				<li className="ml-xxl">
+			</ul>
+			<ul className="shrink-0 flex items-center">
+				<li>
 					<Link href="/login" className={cn(buttonVariants({ variant: 'link' }))}>
 						Login
 					</Link>

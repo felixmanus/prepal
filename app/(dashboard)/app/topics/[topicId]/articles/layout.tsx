@@ -26,7 +26,9 @@ export default async function TopicArticles({
 			<section
 				className={cn('grow overflow-y-auto overflow-x-hidden max-w-[40%] pr-md pb-md', articlesSectionClassNames)}
 			>
-				{topic?.articles?.map(article => <ArticleListItem key={article.id} {...article} topicId={params.topicId} />)}
+				{topic?.articles
+					?.sort((a, b) => a.createdAt.valueOf() - b.createdAt.valueOf())
+					.map(article => <ArticleListItem key={article.id} {...article} topicId={params.topicId} />)}
 			</section>
 			<section className={cn('grow max-w-[60%]', childrenSectionClassName)}>{children}</section>
 		</div>
